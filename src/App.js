@@ -22,12 +22,11 @@ function App() {
         gasto
 
       ])
-    }
 
     // resta del presupuesto actual
     const presupuestoRestante = restante-gasto.cantidad;
     setRestante(presupuestoRestante);
-
+  }
     setCrearGasto(false);
   },[crearGasto, gasto, gastos, restante])
 
