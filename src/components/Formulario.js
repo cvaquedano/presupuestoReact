@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import Error from './Error';
 import { v4 as uuidv4 } from 'uuid';
 
+import PropTypes from 'prop-types';
+
 const Formulario = ({setGasto,setCrearGasto}) => {
     const [nombre, setNombre] = useState('');
     const [cantidad, setCantidad] = useState(0);
@@ -64,4 +66,8 @@ const Formulario = ({setGasto,setCrearGasto}) => {
      );
 }
 
+Formulario.prototype ={
+    setGasto: PropTypes.func.isRequired,
+    setCrearGasto: PropTypes.func.isRequired
+}
 export default Formulario;
