@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Error from './Error';
 import { v4 as uuidv4 } from 'uuid';
 
-const Formulario = ({agregarNuevoGasto}) => {
+const Formulario = ({setGasto,setCrearGasto}) => {
     const [nombre, setNombre] = useState('');
     const [cantidad, setCantidad] = useState(0);
     const [error, setError] = useState(false);
@@ -19,8 +19,9 @@ const Formulario = ({agregarNuevoGasto}) => {
             cantidad,
             id: uuidv4()
         }
-        agregarNuevoGasto(gasto);
 
+        setGasto(gasto);
+        setCrearGasto(true);
         setCantidad(0);
         setNombre('');
 
@@ -62,5 +63,5 @@ const Formulario = ({agregarNuevoGasto}) => {
 
      );
 }
- 
+
 export default Formulario;

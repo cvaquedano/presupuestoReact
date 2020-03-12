@@ -9,5 +9,4 @@ const ControlPresupuesto = ({presupuesto, restante}) => {
         </div>
     </Fragment> );
 }
- 
 export default ControlPresupuesto;
