@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
-import Error from './error'
-const Formulario = () => {
+import Error from './Error';
+import { v4 as uuidv4 } from 'uuid';
+
+const Formulario = ({agregarNuevoGasto}) => {
     const [nombre, setNombre] = useState('');
     const [cantidad, setCantidad] = useState(0);
     const [error, setError] = useState(false);
@@ -12,6 +14,15 @@ const Formulario = () => {
             return;
         }
         setError(false);
+        const gasto= {
+            nombre,
+            cantidad,
+            id: uuidv4()
+        }
+        agregarNuevoGasto(gasto);
+
+        setCantidad(0);
+        setNombre('');
 
     }
 

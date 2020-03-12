@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import Error from "./error"
+import Error from "./Error"
 
 const Pregunta = ({setPresupuesto,setRestante,setMostrarPregunta}) => {
 
