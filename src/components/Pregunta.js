@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import Error from "./error"
 
-const Pregunta = ({setPresupuesto,setRestante}) => {
+const Pregunta = ({setPresupuesto,setRestante,setMostrarPregunta}) => {
 
     const [cantidad, guardarCantidad] = useState(0);
     const [error, setError] = useState(false)
@@ -20,11 +20,12 @@ const Pregunta = ({setPresupuesto,setRestante}) => {
         setError(false);
         setPresupuesto(cantidad);
         setRestante(cantidad);
+        setMostrarPregunta(false);
 
     }
     return ( <Fragment>
         <h2>Coloca tu presupuesto</h2>
-        {error?<Error mensaje="El presupuesto es incorrecto"></Error>:null}
+        {error && <Error mensaje="El presupuesto es incorrecto"></Error>}
         <form
             onSubmit={agregarPresupuesto}
         >
