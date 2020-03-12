@@ -29,7 +29,7 @@ function App() {
     setRestante(presupuestoRestante);
 
     setCrearGasto(false);
-  },[gasto])
+  },[crearGasto, gasto, gastos, restante])
 
 
 
